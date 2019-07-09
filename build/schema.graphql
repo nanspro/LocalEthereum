@@ -1,0 +1,34 @@
+type Created @entity {
+  id: ID!
+  _tradeHash: Bytes! # bytes32
+}
+
+type SellerCancelDisabled @entity {
+  id: ID!
+  _tradeHash: Bytes! # bytes32
+}
+
+type SellerRequestedCancel @entity {
+  id: ID!
+  _tradeHash: Bytes! # bytes32
+}
+
+type CancelledBySeller @entity {
+  id: ID!
+  _tradeHash: Bytes! # bytes32
+}
+
+type CancelledByBuyer @entity {
+  id: ID!
+  _tradeHash: Bytes! # bytes32
+}
+
+type Released @entity {
+  id: ID!
+  _tradeHash: Bytes! # bytes32
+}
+
+type DisputeResolved @entity {
+  id: ID!
+  _tradeHash: Bytes! # bytes32
+}

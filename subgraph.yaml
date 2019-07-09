@@ -1,0 +1,43 @@
+specVersion: 0.0.1
+description: Insights of trades on LocalEthereum
+repository: https://github.com/nanspro/LocalEthereum
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: mainnet
+    source:
+      address: "0x867fFB5a3871b500f65BdFafe0136f9667Deae06"
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - Created
+        - SellerCancelDisabled
+        - SellerRequestedCancel
+        - CancelledBySeller
+        - CancelledByBuyer
+        - Released
+        - DisputeResolved
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: Created(indexed bytes32)
+          handler: handleCreated
+        - event: SellerCancelDisabled(indexed bytes32)
+          handler: handleSellerCancelDisabled
+        - event: SellerRequestedCancel(indexed bytes32)
+          handler: handleSellerRequestedCancel
+        - event: CancelledBySeller(indexed bytes32)
+          handler: handleCancelledBySeller
+        - event: CancelledByBuyer(indexed bytes32)
+          handler: handleCancelledByBuyer
+        - event: Released(indexed bytes32)
+          handler: handleReleased
+        - event: DisputeResolved(indexed bytes32)
+          handler: handleDisputeResolved
+      file: ./src/mapping.ts

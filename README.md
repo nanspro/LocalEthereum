@@ -1,7 +1,7 @@
 # LocalEthereum
 A subgraph for trading insights and data statistics on localethereum.
 
-Deployed here https://thegraph.com/explorer/subgraph/nanspro/localethereum, you can run queries there and also use the apis in your dapp.
+Subgraph is deployed here https://thegraph.com/explorer/subgraph/nanspro/localethereum, you can run queries there and also use the apis in your dapp. There is one demo dapp which can be used here https://nanspro.github.io
 
 ## Installation
 ```
